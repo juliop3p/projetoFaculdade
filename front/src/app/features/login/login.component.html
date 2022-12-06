@@ -1,0 +1,123 @@
+<div class="backgroudLog">
+  <div class="row">
+    <div class="logo">
+      <div class="text">CoffeShop</div>
+      <div>
+        <img src="../../../assets/img/coffe.png" alt="café" />
+      </div>
+      <div class="text">Seja bem-vindo novamente!</div>
+    </div>
+
+    <div class="lineSeparator2"></div>
+
+    <form (mgSubmit)="submitLogin()" [formGroup]="loginForm">
+      <div class="login">
+        <div class="loginText">Login</div>
+
+        <div class="form-group">
+          <input
+            type="usuario"
+            placeholder="Usuário"
+            formControlName="usuario"
+            required
+          />
+          <!-- <div *ngIf="email.invalid && email.touched || f.submitted " class="validation-error">
+            <p *ngIf="email.errors?.['required']">O e-mail é obrigatório!</p>
+          </div> -->
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="Senha"
+            formControlName="senha"
+            required
+          />
+          <!-- <div *ngIf="password.invalid && password.touched || f.submitted " class="validation-error">
+            <p *ngIf="password.errors?.['required']">A senha é obrigatória!</p>
+          </div> -->
+        </div>
+        <div>
+          <button type="submit" class="button" (click)="submitLogin()">
+            Entrar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- <main>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card shadow-lg border-0 round-lg mt-5">
+            <div class="card-header">
+              <h3 class="text-center font-weight-light my-4">
+                {{ userRegister ? 'Cadastro de Novo Usuário' : 'Entrar' }}
+              </h3>
+            </div>
+            <div class="card-body">
+              <div class="alert alert-success" *ngIf="msgSuccess">
+                {{ msgSuccess }}
+              </div>
+              <div class="alert alert-danger" *ngIf="loginError">
+                Login e/ou senha incorreta
+              </div>
+
+              <form #loginForm="ngForm" (submit)="onSubmit()">
+                <div class="form-group" *ngIf="!userRegister">
+                  <label class="small mb-1">Login</label>
+                  <input type="text" name="userName" placeholder="Nome ou e-mail" [(ngModel)]="userName"
+                    autocomplete="off" class="form-control py-4">
+                </div>
+
+                <div class="form-group" *ngIf="userRegister">
+                  <label class="small mb-1">Nome</label>
+                  <input type="text" name="userName" [(ngModel)]="userName" autocomplete="off"
+                    class="form-control py-4">
+                </div>
+
+                <div class="form-group" *ngIf="userRegister">
+                  <label class="small mb-1">E-mail</label>
+                  <input type="email" name="email" [(ngModel)]="email" class="form-control py-4">
+                </div>
+
+                <div class="form-group">
+                  <label class="small mb-1">Senha</label>
+                  <input type="password" name="password" [(ngModel)]="password" class="form-control py-4">
+                </div>
+
+                <div class="form-group" *ngIf="userRegister">
+                  <label class="small mb-1">Confirme a Senha</label>
+                  <input type="password" name="password" [(ngModel)]="password" class="form-control py-4">
+                </div>
+
+                <div class="form-group align-items-center justify-content-between mt-4 mb-0">
+                  <button type="submit" class="btn btn-primary" *ngIf="!userRegister">Enviar</button>
+
+                  <button type="button" class="btn btn-success" *ngIf="userRegister"
+                    (click)="register()">Cadastrar</button>
+
+                  <button type="button" class="btn btn-danger ml-2" *ngIf="userRegister"
+                    (click)="onCancel()">Cancelar</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card-footer text-center">
+              <div class="small">
+                <a href="#" (click)="newUser($event)" *ngIf="!userRegister">
+                  Criar conta
+                </a>
+              </div>
+
+              <div>
+                <a href="" *ngIf="userRegister">
+                  redes socias
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main> -->
+</div>

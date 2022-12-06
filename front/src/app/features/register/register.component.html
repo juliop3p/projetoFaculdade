@@ -1,0 +1,84 @@
+<div class="backgroudLog">
+  <div class="row">
+    <form (ngSubmit)="addUser()" [formGroup]="registerForm">
+      <div class="login">
+        <div class="loginText">Registre-se</div>
+
+        <!-- <div class="alert alert-danger" *ngIf="errors.length > 0">
+          <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+          <ul>
+            <li *ngFor="let error of errors">{{ error }}</li>
+          </ul>
+        </div> -->
+
+        <div class="col-md-6 form-group">
+          <input
+            type="text"
+            id="nome"
+            placeholder="Nome"
+            formControlName="nome"
+            required
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              registerForm.get('nome')?.errors &&
+              registerForm.get('nome')?.dirty &&
+              registerForm.get('nome')?.touched
+            "
+          >
+            <p>Preecha o campo nome</p>
+          </span>
+        </div>
+
+        <div class="col-md-6 form-group mt-4">
+          <input
+            type="email"
+            placeholder="E-mail"
+            formControlName="email"
+            required
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              registerForm.get('email')?.errors &&
+              registerForm.get('email')?.dirty
+            "
+          >
+            <p>Preecha o campo corretamente</p>
+          </span>
+        </div>
+        <div class="col-md-6 form-group mt-4">
+          <input
+            type="password"
+            placeholder="Senha"
+            formControlName="senha"
+            required
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              registerForm.get('senha')?.errors &&
+              registerForm.get('senha')?.dirty
+            "
+          >
+            <p>Preecha o campo corretamente</p>
+          </span>
+        </div>
+        <div class="col-md-6 mt-5">
+          <button type="submit" class="button">Registrar</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="lineSeparator2"></div>
+
+    <div class="logo">
+      <div class="text">CoffeShop</div>
+      <div>
+        <img src="../../../assets/img/coffe.png" alt="café" />
+      </div>
+      <div class="text">Seja bem-vindo faça seu cadastro</div>
+    </div>
+  </div>
+</div>

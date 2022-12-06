@@ -1,0 +1,53 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-3 px-5">
+      <div class="input-group mb-3">
+        <select class="custom-select" id="inputGroupSelect02">
+          <option selected>Selecione o tipo de produto</option>
+          <option value="1">Capsulas</option>
+          <option value="2">Pó de café</option>
+          <option value="3">Cafeteiras</option>
+        </select>
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Tipos</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-9 pr-5 border-left">
+      <div class="d-flex justify-content-between">
+        <h3>Nossos Produtos</h3>
+        <p class="text-muted font-weight-light">6 produtos</p>
+      </div>
+      <div class="row mt-5">
+        <div
+          class="card border-0 mx-4"
+          style="width: 18rem"
+          *ngFor="let product of products"
+        >
+          <img
+            src="{{ product.image }}"
+            class="card-img-top"
+            alt="{{ product.name }}"
+          />
+          <div class="card-body">
+            <p class="card-title mb-0">{{ product.name }}</p>
+            <strong class="card-text">
+              {{
+                product.preco.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL"
+                })
+              }}
+            </strong>
+            <a
+              [routerLink]="['/detail', product.id]"
+              class="btn btn-secondary col-12 mt-3"
+              >Ver Produto</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
